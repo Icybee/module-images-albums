@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+.album-content {
+	margin-left: -16px;
+	margin-top: -16px;
+	overflow: hidden;
+}
+
+.album-content > div {
+	margin-left: 16px;
+	margin-top: 16px;
+	float: left;
+}
+
+.album-content .spinner img {
+	display: block;
+}
+
+.album-content .spinner .icon-plus {
+	display: block !important;
+	font-size: 128px;
+	line-height: 128px;
+	height: 128px;
+	width: 128px;
+	text-align: center;
+}
+
+.album-content .spinner .icon-plus:not(:hover):not(:focus) {
+	color: #ccc;
+}
+
+.widget-add-photo.drop-target {
+	background: red;
+}
+
+.widget-adjust-photo .control-group--imageid {
+	float: left
+}
+
+.widget-adjust-photo .control-group--metas {
+	float: right;
+	margin-left: 10px;
+	margin-top: 0;
+}
+
+.widget-adjust-photo .control-group--caption {
+	float: left;
+	clear: both;
+}
