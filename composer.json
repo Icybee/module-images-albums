@@ -1,6 +1,6 @@
 {
 	"name": "icybee/module-images-albums",
-	"type": "icybee-module",
+	"type": "icanboogie-module",
 	"description": "Introduces the Albums content type to the CMS Icybee.",
 	"keywords": [ "albums", "images", "organize" ],
 	"license": "BSD-3-Clause",
@@ -19,7 +19,7 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.3.0",
-		"icybee/module-installer": "*",
+		"icanboogie/module-installer": "*",
 		"icybee/module-nodes": "*"
 	},
 	"autoload": {
