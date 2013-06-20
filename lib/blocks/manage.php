@@ -66,7 +66,7 @@ class ManageBlock extends \Icybee\Modules\Nodes\ManageBlock
 				(
 					array
 					(
-						'data-popover-image' => $image->thumbnail('$popup')->url,
+						'data-popover-image' => $image->thumbnail('$popover')->url,
 						'class' => null
 					)
 				);
