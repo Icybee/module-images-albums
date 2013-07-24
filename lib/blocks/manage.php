@@ -31,18 +31,41 @@ class ManageBlock extends \Icybee\Modules\Nodes\ManageBlock
 		);
 	}
 
-	protected function columns()
+	/**
+	 * Adds the following columns:
+	 *
+	 * - `photos`: An instance of {@link ManageBlock\PhotosColumn}.
+	 */
+	protected function get_available_columns()
 	{
-		return parent::columns() + array
+		return array_merge(parent::get_available_columns(), array
 		(
-			'photos' => array
+			'photos' => __CLASS__ . '\PhotosColumn'
+		));
+	}
+}
+
+namespace Icybee\Modules\Images\Albums\ManageBlock;
+
+use Icybee\ManageBlock\Column;
+
+/**
+ * Representation of the `photos` column.
+ */
+class PhotosColumn extends Column
+{
+	public function __construct(\Icybee\Modules\Images\Albums\ManageBlock $manager, $id, array $options=array())
+	{
+		parent::__construct
+		(
+			$manager, $id, $options + array
 			(
-				'label' => 'Photos'
+				'title' => 'Photos'
 			)
 		);
 	}
 
-	protected function render_cell_photos($record, $property)
+	public function render_cell($record)
 	{
 		global $core;
 
