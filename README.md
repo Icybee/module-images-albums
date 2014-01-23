@@ -25,7 +25,7 @@ Create a `composer.json` file and run `php composer.phar install` command to ins
 	"minimum-stability": "dev",
 	"require":
 	{
-		"icybee/module-images-albums": "*"
+		"icybee/module-images-albums": "2.*"
 	}
 }
 ```

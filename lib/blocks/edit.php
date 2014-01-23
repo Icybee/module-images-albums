@@ -32,11 +32,11 @@ class EditBlock extends \Icybee\Modules\Nodes\EditBlock
 		$document->js->add('edit.js');
 	}
 
-	protected function get_attributes()
+	protected function lazy_get_attributes()
 	{
 		return \ICanBoogie\array_merge_recursive
 		(
-			parent::get_attributes(), array
+			parent::lazy_get_attributes(), array
 			(
 				Element::GROUPS => array
 				(
@@ -50,11 +50,11 @@ class EditBlock extends \Icybee\Modules\Nodes\EditBlock
 		);
 	}
 
-	protected function get_children()
+	protected function lazy_get_children()
 	{
 		return array_merge
 		(
-			parent::get_children(), array
+			parent::lazy_get_children(), array
 			(
 				'slides' => new AlbumEditor
 				(

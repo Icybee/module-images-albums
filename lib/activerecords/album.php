@@ -34,7 +34,7 @@ class Album extends \Icybee\Modules\Nodes\Node implements \IteratorAggregate
 	 *
 	 * @return array[]Photo
 	 */
-	protected function get_photos()
+	protected function lazy_get_photos()
 	{
 		$records = ActiveRecord\get_model('images.albums/photos')
 		->filter_by_nid($this->nid)

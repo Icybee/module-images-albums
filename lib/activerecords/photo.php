@@ -76,7 +76,7 @@ class Photo extends ActiveRecord
 	 * @return \Icybee\Modules\Images\Image|null Returns the associated image or `null` if there
 	 * is no image associated.
 	 */
-	protected function get_image()
+	protected function lazy_get_image()
 	{
 		return $this->imageid ? ActiveRecord\get_model('images')->find($this->imageid) : null;
 	}

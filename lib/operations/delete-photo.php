@@ -16,7 +16,7 @@ class DeletePhotoOperation extends \ICanboogie\Operation
 		+ parent::get_controls();
 	}
 
-	protected function get_model()
+	protected function lazy_get_model()
 	{
 		return ActiveRecord\get_model('images.albums/photos');
 	}

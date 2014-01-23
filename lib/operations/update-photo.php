@@ -14,7 +14,7 @@ class UpdatePhotoOperation extends \ICanBoogie\Operation
 		+ parent::get_controls();
 	}
 
-	protected function volatile_get_model()
+	protected function get_model()
 	{
 		global $core;
 
