@@ -19,7 +19,7 @@ return array
 			(
 				'fields' => array
 				(
-					'posterid' => 'foreign',
+					'poster_id' => 'foreign',
 					'description' => 'text'
 				)
 			)
@@ -34,7 +34,7 @@ return array
 				(
 					'id' => 'serial',
 					'nid' => 'foreign',
-					'imageid' => 'foreign',
+					'image_id' => 'foreign',
 					'title' => array('varchar', 80),
 					'caption' => 'text',
 					'link' => 'varchar',

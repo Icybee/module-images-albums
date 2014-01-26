@@ -18,7 +18,7 @@ use ICanBoogie\ActiveRecord;
  */
 class Album extends \Icybee\Modules\Nodes\Node implements \IteratorAggregate
 {
-	public $posterid;
+	public $poster_id;
 	public $description;
 
 	/**
@@ -47,7 +47,7 @@ class Album extends \Icybee\Modules\Nodes\Node implements \IteratorAggregate
 
 		foreach ($records as $record)
 		{
-			$keys[$record->imageid] = $record;
+			$keys[$record->image_id] = $record;
 		}
 
 		if ($keys)

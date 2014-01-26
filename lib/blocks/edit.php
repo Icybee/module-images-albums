@@ -64,7 +64,7 @@ class EditBlock extends \Icybee\Modules\Nodes\EditBlock
 					)
 				),
 
-				'imageid' => new PopImage
+				'image_id' => new PopImage
 				(
 					array
 					(
@@ -142,7 +142,7 @@ class AdjustPhoto extends Group
 			(
 				Element::CHILDREN => array
 				(
-					'imageid' => $this->elements['imageid'] = new PopImage
+					'image_id' => $this->elements['image_id'] = new PopImage
 					(
 						array
 						(

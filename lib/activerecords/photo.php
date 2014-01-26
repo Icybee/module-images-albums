@@ -39,7 +39,7 @@ class Photo extends ActiveRecord implements \Brickrouge\CSSClassNames
 	 *
 	 * @var int
 	 */
-	public $imageid;
+	public $image_id;
 
 	/**
 	 * Title of the photo.
@@ -80,7 +80,7 @@ class Photo extends ActiveRecord implements \Brickrouge\CSSClassNames
 	 */
 	protected function lazy_get_image()
 	{
-		return $this->imageid ? ActiveRecord\get_model('images')->find($this->imageid) : null;
+		return $this->image_id ? ActiveRecord\get_model('images')->find($this->image_id) : null;
 	}
 
 	/**
