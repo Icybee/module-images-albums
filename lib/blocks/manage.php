@@ -26,7 +26,7 @@ class ManageBlock extends \Icybee\Modules\Nodes\ManageBlock
 		(
 			$module, $attributes + array
 			(
-				self::T_COLUMNS_ORDER => array('title', 'is_online', 'photos', 'uid', 'modified')
+				self::T_COLUMNS_ORDER => array('title', 'is_online', 'photos', 'uid', 'updated_at')
 			)
 		);
 	}
