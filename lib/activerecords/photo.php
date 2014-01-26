@@ -16,8 +16,10 @@ use ICanBoogie\ActiveRecord;
 /**
  * A photo of an album.
  */
-class Photo extends ActiveRecord
+class Photo extends ActiveRecord implements \Brickrouge\CSSClassNames
 {
+	use \Brickrouge\CSSClassNamesProperty;
+
 	/**
 	 * Identifier of the photo.
 	 *
@@ -79,5 +81,23 @@ class Photo extends ActiveRecord
 	protected function lazy_get_image()
 	{
 		return $this->imageid ? ActiveRecord\get_model('images')->find($this->imageid) : null;
+	}
+
+	/**
+	 * Returns the CSS class names of the node.
+	 *
+	 * @return array[string]mixed
+	 */
+	protected function get_css_class_names()
+	{
+		$id = $this->id;
+		$image_id = $this->image_id;
+
+		return array
+		(
+			'type' => 'album-photo',
+			'id' => $id ? "album-photo-{$id}" : null,
+			'album-photo-image' => $image_id ? "album-photo-image-{$image_id}" : null
+		);
 	}
 }
