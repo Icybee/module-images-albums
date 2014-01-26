@@ -12,10 +12,11 @@ composer.phar:
 	@curl -s https://getcomposer.org/installer | php
 
 vendor: composer.phar
-	@if [ ! -d "vendor" ] ; then \
-		php composer.phar install --dev ; \
-	fi
-	
+	@php composer.phar install --dev
+
+update: composer.phar
+	@php composer.phar update --dev
+
 test: vendor
 	@phpunit
 
@@ -28,7 +29,7 @@ doc: vendor
 	--exclude "*/tests/*" \
 	--exclude "*/composer/*" \
 	--template-config /usr/share/php/data/ApiGen/templates/bootstrap/config.neon
-	
+
 clean:
 	@rm -fR docs
 	@rm -fR vendor

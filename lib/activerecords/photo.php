@@ -56,11 +56,23 @@ class Photo extends ActiveRecord implements \Brickrouge\CSSClassNames
 	public $caption;
 
 	/**
+	 * A URL link.
+	 *
+	 * @var string
+	 */
+	public $link;
+
+	/**
 	 * Weight of the photo in the album.
 	 *
 	 * @var int
 	 */
 	public $weight;
+
+	public function __construct($model='images.albums/photos')
+	{
+		parent::__construct($model);
+	}
 
 	/**
 	 * Returns the associated image as a string.
