@@ -21,6 +21,7 @@ use Brickrouge\Text;
 
 use Icybee\Modules\Editor\RTEEditorElement;
 use Icybee\Modules\Images\PopImage;
+use Icybee\Modules\Images\PopOrUploadImage;
 
 class EditBlock extends \Icybee\Modules\Nodes\EditBlock
 {
@@ -64,7 +65,7 @@ class EditBlock extends \Icybee\Modules\Nodes\EditBlock
 					)
 				),
 
-				'image_id' => new PopImage
+				'image_id' => new PopOrUploadImage
 				(
 					array
 					(
@@ -142,7 +143,7 @@ class AdjustPhoto extends Group
 			(
 				Element::CHILDREN => array
 				(
-					'image_id' => $this->elements['image_id'] = new PopImage
+					'image_id' => $this->elements['image_id'] = new PopOrUploadImage
 					(
 						array
 						(

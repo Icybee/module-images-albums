@@ -37,12 +37,6 @@
 	float: left
 }
 
-.widget-adjust-photo .control-group--metas {
-	float: right;
-	margin-left: 10px;
-	margin-top: 0;
-}
-
 .widget-adjust-photo .control-group--caption {
 	float: left;
 	clear: both;
