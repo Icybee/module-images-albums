@@ -173,7 +173,13 @@ class AdjustPhoto extends Group
 										Text::ADDON => '<i class="icon-link"></i>',
 										Text::ADDON_POSITION => 'before'
 									)
-								)
+								),
+
+								'is_target_blank' => $this->elements['is_target_blank'] = new Element(Element::TYPE_CHECKBOX, [
+
+									Element::LABEL => "Ouvrir le lien dans une nouvelle fenêtre"
+
+								])
 							),
 
 							'name' => 'metas'
@@ -216,7 +222,9 @@ class AdjustPhoto extends Group
 						continue;
 					}
 
-					$this->elements[$name]['value'] = $v;
+					$el = $this->elements[$name];
+
+					$el[$el->type == Element::TYPE_CHECKBOX ? 'checked' : 'value'] = $v;
 				}
 			}
 		}

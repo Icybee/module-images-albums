@@ -38,6 +38,7 @@ return array
 					'title' => array('varchar', 80),
 					'caption' => 'text',
 					'link' => 'varchar',
+					'is_target_blank' => 'boolean',
 					'weight' => array('integer', 'unsigned' => true, 'default' => 0)
 				)
 			)
