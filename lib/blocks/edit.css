@@ -1,5 +1,3 @@
-@CHARSET "UTF-8";
-
 .album-content {
 	margin-left: -16px;
 	margin-top: -16px;
@@ -31,6 +29,20 @@
 
 .widget-add-photo.drop-target {
 	background: red;
+}
+
+.widget-pop-photo .close {
+	background: white;
+	border-bottom-left-radius: 3px;
+	opacity: 1;
+	padding: 2px 5px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.widget-pop-photo:hover .close {
+	background: #E6E6E6;
 }
 
 .widget-adjust-photo .control-group--imageid {

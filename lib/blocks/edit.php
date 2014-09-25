@@ -252,7 +252,7 @@ class PopPhoto extends Element
 
 				'data-adjust' => 'adjust-photo',
 
-				'class' => 'spinner',
+				'class' => 'spinner widget-pop-photo',
 				'tabindex' => 0,
 				'name' => 'photos[]'
 			)
@@ -291,6 +291,7 @@ class PopPhoto extends Element
 		return <<<EOT
 {$thumbnail}
 <input type="hidden" name="{$name}" value="{$value}" />
+<button type="button" data-dismiss="value" class="close">×</button>
 EOT;
 	}
 }
