@@ -95,6 +95,11 @@ class Photo extends ActiveRecord implements \Brickrouge\CSSClassNames
 		return $this->image_id ? ActiveRecord\get_model('images')->find($this->image_id) : null;
 	}
 
+	protected function lazy_get_album()
+	{
+		return $this->nid ? ActiveRecord\get_model('images.albums')[$this->nid] : null;
+	}
+
 	/**
 	 * Returns the CSS class names of the node.
 	 *

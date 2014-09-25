@@ -95,7 +95,7 @@ class AlbumEditor extends Element
 		(
 			'div', $attributes + array
 			(
-				Element::WIDGET_CONSTRUCTOR => 'AlbumEditor',
+				Element::IS => 'AlbumEditor',
 
 				'class' => 'widget-album-editor'
 			)
@@ -198,7 +198,7 @@ class AdjustPhoto extends Group
 					)
 				),
 
-				Element::WIDGET_CONSTRUCTOR => 'AdjustPhoto',
+				Element::IS => 'AdjustPhoto',
 
 				'class' => 'widget-adjust-photo'
 			)
@@ -224,7 +224,14 @@ class AdjustPhoto extends Group
 
 					$el = $this->elements[$name];
 
-					$el[$el->type == Element::TYPE_CHECKBOX ? 'checked' : 'value'] = $v;
+					if ($el->type == Element::TYPE_CHECKBOX)
+					{
+						$el['checked'] = !!$v;
+					}
+					else
+					{
+						$el['value'] = $v;
+					}
 				}
 			}
 		}
@@ -248,7 +255,7 @@ class PopPhoto extends Element
 		(
 			'div', $attributes + array
 			(
-				Element::WIDGET_CONSTRUCTOR => 'PopPhoto',
+				Element::IS => 'PopPhoto',
 
 				'data-adjust' => 'adjust-photo',
 
@@ -304,7 +311,7 @@ class AddPhoto extends PopPhoto
 		(
 			$attributes + array
 			(
-				Element::WIDGET_CONSTRUCTOR => 'AddPhoto',
+				Element::IS => 'AddPhoto',
 
 				'class' => 'widget-add-photo spinner',
 				'dropzone' => 'file:image'
