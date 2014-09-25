@@ -3,6 +3,7 @@
 namespace Icybee\Modules\Images\Albums;
 
 use ICanBoogie\ActiveRecord;
+use ICanBoogie\I18n\FormattedString;
 
 class DeletePhotoOperation extends \ICanboogie\Operation
 {
@@ -32,7 +33,7 @@ class DeletePhotoOperation extends \ICanboogie\Operation
 
 		$this->model->delete($id);
 
-		$this->response->message = array("The photo %id has been deleted.", array('%id' => $id));
+		$this->response->message = new FormattedString("The photo %id has been deleted.", [ '%id' => $id ]);
 
 		return true;
 	}
