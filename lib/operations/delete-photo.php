@@ -1,9 +1,17 @@
 <?php
 
+/*
+ * This file is part of the Icybee package.
+ *
+ * (c) Olivier Laviale <olivier.laviale@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Icybee\Modules\Images\Albums;
 
 use ICanBoogie\ActiveRecord;
-use ICanBoogie\I18n\FormattedString;
 
 class DeletePhotoOperation extends \ICanboogie\Operation
 {
@@ -33,7 +41,7 @@ class DeletePhotoOperation extends \ICanboogie\Operation
 
 		$this->model->delete($id);
 
-		$this->response->message = new FormattedString("The photo %id has been deleted.", [ '%id' => $id ]);
+		$this->response->message = $this->format("The photo %id has been deleted.", [ '%id' => $id ]);
 
 		return true;
 	}
