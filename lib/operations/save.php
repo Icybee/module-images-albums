@@ -13,11 +13,9 @@ class SaveOperation extends \Icybee\Modules\Nodes\SaveOperation
 {
 	protected function process()
 	{
-		global $core;
-
 		$rc = parent::process();
 		$nid = $rc['key'];
-		$photos_ids = $this->request['photos'];
+		$photos_ids = $this->request['photos'] ?: [];
 		$photos_ids = array_combine($photos_ids, $photos_ids);
 		$photos_model = $this->module->model('photos');
 		$current_photos_ids = $photos_model->select('id, id')->filter_by_nid($nid)->pairs;
@@ -27,6 +25,7 @@ class SaveOperation extends \Icybee\Modules\Nodes\SaveOperation
 		#
 
 		$errors = $this->response->errors;
+		$routes = $this->app->routes;
 
 		foreach (array_diff($current_photos_ids, $photos_ids) as $id)
 		{
@@ -34,14 +33,14 @@ class SaveOperation extends \Icybee\Modules\Nodes\SaveOperation
 
 			$response = Request::from([
 
-				'path' => $core->routes['api:images.albums:photo:delete']->format([ 'id' => $id ]),
+				'path' => $routes['api:images.albums:photo:delete']->format([ 'id' => $id ]),
 				'is_delete' => true
 
 			])->send();
 
-			if (!$response->is_successful)
+			if (!$response->status->is_successful)
 			{
-				$errors['photos'][] = $errors->format("An error occured while deleting photo %id", [ 'id' => $id ]);
+				$errors['photos'][] = $errors->format("An error occurred while deleting photo %id", [ 'id' => $id ]);
 			}
 		}
 
